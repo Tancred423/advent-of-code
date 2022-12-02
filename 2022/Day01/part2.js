@@ -9,7 +9,7 @@ console.log('Top carrying elves:', topCarryingElves)
 console.log('Total calories:', total)
 
 function getCaloriesByElf() {
-  const input = fs.readFileSync('Day01/input.txt', 'utf8')
+  const input = fs.readFileSync(__dirname + '/input.txt', 'utf8')
   const lines = input.split('\r\n')
 
   const caloriesByElf = new Map()
