@@ -17,10 +17,10 @@ let amountOfOverlappingAssignmentPairs = 0
 
 for (const elfPair of elfPairs) {
   const elfSections = elfPair.split(',')
-  const elf1SectionsBorders = elfSections[0].split('-')
-  const elf2SectionsBorders = elfSections[1].split('-')
+  const elf1SectionBorders = elfSections[0].split('-')
+  const elf2SectionBorders = elfSections[1].split('-')
 
-  if (isRangeOverlapping(elf1SectionsBorders, elf2SectionsBorders)) {
+  if (isRangeOverlapping(elf1SectionBorders, elf2SectionBorders)) {
     amountOfOverlappingAssignmentPairs++
   }
 }

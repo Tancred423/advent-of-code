@@ -17,12 +17,12 @@ let amountOfFullyContainedAssignmentPairs = 0
 
 for (const elfPair of elfPairs) {
   const elfSections = elfPair.split(',')
-  const elf1SectionsBorders = elfSections[0].split('-')
-  const elf2SectionsBorders = elfSections[1].split('-')
+  const elf1SectionBorders = elfSections[0].split('-')
+  const elf2SectionBorders = elfSections[1].split('-')
 
   if (
-    isRangeFullyContained(elf1SectionsBorders, elf2SectionsBorders) ||
-    isRangeFullyContained(elf2SectionsBorders, elf1SectionsBorders)
+    isRangeFullyContained(elf1SectionBorders, elf2SectionBorders) ||
+    isRangeFullyContained(elf2SectionBorders, elf1SectionBorders)
   ) {
     amountOfFullyContainedAssignmentPairs++
   }
