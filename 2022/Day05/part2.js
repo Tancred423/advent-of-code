@@ -29,23 +29,20 @@ function rearrangeStacksOfCrates(stacksOfCrates) {
 
   for (const match of matches) {
     const move = match.groups.move
-    const from = match.groups.from
-    const to = match.groups.to
+    const from = match.groups.from - 1
+    const to = match.groups.to - 1
 
-    const cratesToTransfer = stacksOfCrates[from - 1].splice(
-      stacksOfCrates[from - 1].length - move,
-      move
-    )
+    const cratesToTransfer = stacksOfCrates[from].splice(-move)
 
-    stacksOfCrates[to - 1].push(...cratesToTransfer)
+    stacksOfCrates[to].push(...cratesToTransfer)
   }
 }
 
 function getCratesOnTop(stacksOfCrates) {
   let cratesOnTop = ''
 
-  for (const stacks of stacksOfCrates) {
-    cratesOnTop += stacks.pop()
+  for (const stack of stacksOfCrates) {
+    cratesOnTop += stack.pop()
   }
 
   return cratesOnTop
