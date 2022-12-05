@@ -11,8 +11,7 @@ function parseStacksOfCrates() {
     let tmpStack = []
 
     for (let v = 0; v < tallestStack; v++) {
-      const line = lines[v]
-      tmpStack.push(line.charAt(h))
+      tmpStack.push(lines[v].charAt(h))
     }
 
     stacksOfCrates.push(
@@ -43,13 +42,13 @@ function rearrangeStacksOfCrates(stacksOfCrates) {
 }
 
 function getCratesOnTop(stacksOfCrates) {
-  let answer = ''
+  let cratesOnTop = ''
 
   for (const stacks of stacksOfCrates) {
-    answer += stacks.pop()
+    cratesOnTop += stacks.pop()
   }
 
-  return answer
+  return cratesOnTop
 }
 
 const stacksOfCrates = parseStacksOfCrates()
