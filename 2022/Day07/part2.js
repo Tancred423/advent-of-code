@@ -28,9 +28,9 @@ function getTotalSizeOfFolder(folderName) {
 
 const folderIndices = new Map()
 const folderSizes = new Map()
-getTotalSizeOfFolder('/')
+const usedSpace = getTotalSizeOfFolder('/')
 
-const unusedSpace = 70000000 - folderSizes.get('/0')
+const unusedSpace = 70000000 - usedSpace
 const spaceToFreeUp = 30000000 - unusedSpace
 
 console.log(
