@@ -11,7 +11,7 @@ Current Progress:
 - Day 05 ⭐⭐
 - Day 06 ⭐⭐
 - Day 07 ⭐⭐
-- Day 08
+- Day 08 ⭐⭐
 - Day 09
 - Day 10
 - Day 11
