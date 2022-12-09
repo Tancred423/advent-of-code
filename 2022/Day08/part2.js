@@ -8,7 +8,7 @@ function getTreesY(x) {
   return treesY
 }
 
-function getAmountOfSmallerTrees(trees, originTree) {
+function getAmountOfVisibleTrees(trees, originTree) {
   let amount = 0
 
   for (const tree of trees) {
@@ -37,10 +37,10 @@ for (let y = 0; y < height; y++) {
     const treesYAfter = treesY.splice(1)
 
     const scenicScore =
-      getAmountOfSmallerTrees(treesXBefore, originTree) *
-      getAmountOfSmallerTrees(treesXAfter, originTree) *
-      getAmountOfSmallerTrees(treesYBefore, originTree) *
-      getAmountOfSmallerTrees(treesYAfter, originTree)
+      getAmountOfVisibleTrees(treesXBefore, originTree) *
+      getAmountOfVisibleTrees(treesXAfter, originTree) *
+      getAmountOfVisibleTrees(treesYBefore, originTree) *
+      getAmountOfVisibleTrees(treesYAfter, originTree)
 
     highestScenicScore = Math.max(highestScenicScore, scenicScore)
   }
