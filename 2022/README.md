@@ -2,7 +2,7 @@
 
 2022 Advent of Code challenges
 
-Current Progress:
+Current Progress - Tancred 20 ⭐
 
 - Day 01 ⭐⭐
 - Day 02 ⭐⭐
@@ -13,7 +13,7 @@ Current Progress:
 - Day 07 ⭐⭐
 - Day 08 ⭐⭐
 - Day 09 ⭐⭐
-- Day 10
+- Day 10 ⭐⭐
 - Day 11
 - Day 12
 - Day 13
