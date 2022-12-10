@@ -72,7 +72,7 @@ function moveKnot(knotIndex) {
 
   // Move knot diagonally
 
-  return coords[knotIndex].push([
+  coords[knotIndex].push([
     knot[0] + (leadingKnot[0] - knot[0] > 0 ? 1 : -1),
     knot[1] + (leadingKnot[1] - knot[1] > 0 ? 1 : -1),
   ])

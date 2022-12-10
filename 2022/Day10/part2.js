@@ -43,4 +43,4 @@ for (cycle = 1; cycle <= lastCycle; cycle++) {
 
 crtRows.push(currentCrtRow.join(''))
 
-console.log(crtRows)
+console.log('CRT render:\n' + crtRows.join('\n'))
