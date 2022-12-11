@@ -26,36 +26,30 @@ for (let i = 0; i <= highestMonkeyIndex; i++) monkeys.push(getMonkeyInfo(i))
 // Let the game begin
 
 for (let round = 1; round <= 20; round++) {
-  for (let monkeyIndex = 0; monkeyIndex <= highestMonkeyIndex; monkeyIndex++) {
-    while (monkeys[monkeyIndex].items.length > 0) {
+  for (let i = 0; i <= highestMonkeyIndex; i++) {
+    while (monkeys[i].items.length > 0) {
       // Count inspections
-      monkeys[monkeyIndex].inspected++
+      monkeys[i].inspected++
 
       // Monkey inspects an item - Worry level increases
-      if (monkeys[monkeyIndex].operation === '+') {
-        monkeys[monkeyIndex].items[0] +=
-          monkeys[monkeyIndex].amount === -1
-            ? monkeys[monkeyIndex].items[0]
-            : monkeys[monkeyIndex].amount
+      if (monkeys[i].operation === '+') {
+        monkeys[i].items[0] +=
+          monkeys[i].amount === -1 ? monkeys[i].items[0] : monkeys[i].amount
       } else {
-        monkeys[monkeyIndex].items[0] *=
-          monkeys[monkeyIndex].amount === -1
-            ? monkeys[monkeyIndex].items[0]
-            : monkeys[monkeyIndex].amount
+        monkeys[i].items[0] *=
+          monkeys[i].amount === -1 ? monkeys[i].items[0] : monkeys[i].amount
       }
 
       // Monkey gets bored with item
-      monkeys[monkeyIndex].items[0] = Math.floor(
-        monkeys[monkeyIndex].items[0] / 3
-      )
+      monkeys[i].items[0] = Math.floor(monkeys[i].items[0] / 3)
 
       // Item is thrown
       const receivingMonkey =
-        monkeys[monkeyIndex].items[0] % monkeys[monkeyIndex].divisible === 0
-          ? monkeys[monkeyIndex].true
-          : monkeys[monkeyIndex].false
+        monkeys[i].items[0] % monkeys[i].divisible === 0
+          ? monkeys[i].true
+          : monkeys[i].false
 
-      monkeys[receivingMonkey].items.push(monkeys[monkeyIndex].items.shift())
+      monkeys[receivingMonkey].items.push(monkeys[i].items.shift())
     }
   }
 }

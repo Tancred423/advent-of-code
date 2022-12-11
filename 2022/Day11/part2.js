@@ -28,34 +28,30 @@ const mod = monkeys.map((monkey) => monkey.divisible).reduce((a, b) => a * b)
 // Let the game begin
 
 for (let round = 1; round <= 10_000; round++) {
-  for (let monkeyIndex = 0; monkeyIndex <= highestMonkeyIndex; monkeyIndex++) {
-    while (monkeys[monkeyIndex].items.length > 0) {
+  for (let i = 0; i <= highestMonkeyIndex; i++) {
+    while (monkeys[i].items.length > 0) {
       // Count inspections
-      monkeys[monkeyIndex].inspected++
+      monkeys[i].inspected++
 
       // Monkey inspects an item - Worry level increases
-      if (monkeys[monkeyIndex].operation === '+') {
-        monkeys[monkeyIndex].items[0] +=
-          monkeys[monkeyIndex].amount === -1
-            ? monkeys[monkeyIndex].items[0]
-            : monkeys[monkeyIndex].amount
+      if (monkeys[i].operation === '+') {
+        monkeys[i].items[0] +=
+          monkeys[i].amount === -1 ? monkeys[i].items[0] : monkeys[i].amount
       } else {
-        monkeys[monkeyIndex].items[0] *=
-          monkeys[monkeyIndex].amount === -1
-            ? monkeys[monkeyIndex].items[0]
-            : monkeys[monkeyIndex].amount
+        monkeys[i].items[0] *=
+          monkeys[i].amount === -1 ? monkeys[i].items[0] : monkeys[i].amount
       }
 
       // Deal with big numbers by using the result from item % prod(all divisibles)
-      monkeys[monkeyIndex].items[0] = monkeys[monkeyIndex].items[0] % mod
+      monkeys[i].items[0] = monkeys[i].items[0] % mod
 
       // Item is thrown
       const receivingMonkey =
-        monkeys[monkeyIndex].items[0] % monkeys[monkeyIndex].divisible === 0
-          ? monkeys[monkeyIndex].true
-          : monkeys[monkeyIndex].false
+        monkeys[i].items[0] % monkeys[i].divisible === 0
+          ? monkeys[i].true
+          : monkeys[i].false
 
-      monkeys[receivingMonkey].items.push(monkeys[monkeyIndex].items.shift())
+      monkeys[receivingMonkey].items.push(monkeys[i].items.shift())
     }
   }
 }
